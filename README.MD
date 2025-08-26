@@ -25,6 +25,7 @@ Na koniec wygenerowane pliki należy przesłać mailowo do odpowiedniego pracown
 - 📄 Plik `client_secrets.json` w katalogu z kodem (plik z danymi uwierzytelniającymi OAuth 2.0 dla Google Drive).
   - Można go pobrać z [Google Cloud Console](https://console.cloud.google.com/apis/credentials)
   - Musi być poprawnie skonfigurowany, aby skrypt mógł przesyłać pliki na Google Drive
+- Należy stworzyć folder `data/` tuż po pobraniu tego repozytorium.
 
 ## 🔄 Workflow (działania użytkownika)
 
