@@ -21,6 +21,10 @@ Na koniec wygenerowane pliki należy przesłać mailowo do odpowiedniego pracown
 
 - 🐍 Python 3.10+
 - 📦 Zainstalowane paczki: cx_Oracle, pandas, PyDrive, gspread, gspread_dataframe
+- 🔑 Konto Google z dostępem do Google Drive, w którym będą zapisywane pliki
+- 📄 Plik `client_secrets.json` w katalogu z kodem (plik z danymi uwierzytelniającymi OAuth 2.0 dla Google Drive).
+  - Można go pobrać z [Google Cloud Console](https://console.cloud.google.com/apis/credentials)
+  - Musi być poprawnie skonfigurowany, aby skrypt mógł przesyłać pliki na Google Drive
 
 ## 🔄 Workflow (działania użytkownika)
 

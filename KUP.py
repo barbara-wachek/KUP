@@ -117,7 +117,7 @@ if __name__ == "__main__":
     
     user_pbl = get_user_pbl()
     file_with_user_records = '1DpHG81z-HCu1JT4mG2whMxWZ83Zas9j6CerZ36HsGFY'  #ten dokument należy wypełnić ID - NW - JSON
-    date_start = '2020/01/01'
+    date_start = '2024/01/01'
     date_end = datetime.date.today().strftime('%Y/%m/%d')
 
     query = '''
