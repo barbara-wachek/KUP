@@ -16,4 +16,22 @@ Na koniec wygenerowane pliki należy przesłać mailowo do odpowiedniego pracown
 - Wysyła pliki do wybranego folderu na Google Drive.
 - Aktualizuje arkusz Google Sheets z listą przetworzonych ID.
 
+
+## 🛠️ Wymagania
+
+- 🐍 Python 3.10+
+- 📦 Zainstalowane paczki: cx_Oracle, pandas, PyDrive, gspread, gspread_dataframe
+
+## 🔄 Workflow (działania użytkownika)
+
+1. Otwórz terminal (cmd) w folderze z kodem.  
+2. Uruchom skrypt poleceniem:
+   ``` bash
+   python KUP.py
+   ```
+
+3. Wpisz nazwę użytkownika, gdy pojawi się komunikat.
+4. Skrypt automatycznie pobierze dane, podzieli je na pliki `.ods` i wyśle je na Google Drive i lokalnego folderu `data/`.
+5. Wygenerowane pliki należy następnie wysłać mailowo do odpowiedniego pracownika.
+
 ---
