@@ -39,7 +39,7 @@ def gsheet_to_df(gsheetId, worksheet):
 
 #Wybór nazwy użytkownika z predefiniowanej listy
 def get_user_pbl():
-    proper_users = ['KAROLINA', 'IZA', 'OLA', 'GOSIA', 'BEATAD', 'BEATAS', 'TOMASZ', 'EWA', 'BARBARAW', 'BEATAK', 'NIKODEM', 'CEZARY', 'TOMASZU']
+    proper_users = ['KAROLINA', 'IZA', 'OLA', 'GOSIA', 'BEATAD', 'BEATAS', 'TOMASZ', 'EWA', 'BARBARAW', 'BEATAK', 'NIKODEM', 'CEZARY', 'TOMASZU', 'PAULINA']
 
     while True:
         answer = input("Wpisz nazwę użytkownika: ")
