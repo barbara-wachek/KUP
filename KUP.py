@@ -1,10 +1,9 @@
 #%% Import
-import cx_Oracle
+import oracledb
 import pandas as pd
 import os
 import datetime
 import random
-# import argparse
 
 from pydrive.auth import GoogleAuth
 from pydrive.drive import GoogleDrive
@@ -12,14 +11,34 @@ from gspread_dataframe import set_with_dataframe, get_as_dataframe
 import gspread as gs
 
 
-#%%init
-try:
-    cx_Oracle.init_oracle_client(
-        lib_dir=r"C:\Users\PBL_Basia\Desktop\SQL\sqldeveloper\instantclient_19_6"
-    )
-except cx_Oracle.ProgrammingError:
-    pass  # już zainicjalizowany
 
+#%% Connection to DB
+
+# Inicjalizacja thick mode
+oracledb.init_oracle_client(
+    lib_dir=r"C:\Oracle\instantclient_19_29"  # ścieżka do Oracle Instant Client
+)
+
+def connect_to_database():
+    host = os.environ.get('PBL_ORACLE_HOST')
+    port = os.environ.get('PBL_ORACLE_PORT')
+    service = os.environ.get('PBL_ORACLE_SERVICE')
+    user = os.environ.get('PBL_ORACLE_USER')
+    password = os.environ.get('PBL_ORACLE_PASSWORD')
+
+    dsn = f"{host}:{port}/{service}"
+
+    try:
+        connection = oracledb.connect(
+            user=user,
+            password=password,
+            dsn=dsn
+        )
+        print("Połączono z bazą w trybie thick!")
+        return connection
+    except oracledb.Error as error:
+        print(f"Error connecting to database: {error}")
+        return None
 
 #%% Functions
 
@@ -52,29 +71,7 @@ def get_user_pbl():
         
         
 
-def connect_to_database():
-    host = os.environ.get('DB_HOST')
-    port = os.environ.get('DB_PORT')
-    sid = os.environ.get('DB_SID')
-    user = os.environ.get('DB_USER')
-    password = os.environ.get('DB_PASSWORD')
-    
-    dsn_tns = cx_Oracle.makedsn(host, port, service_name=sid)
-    
-    try:
-        connection = cx_Oracle.connect(
-            user=user,
-            password=password,
-            dsn=dsn_tns,
-            encoding='windows-1250'
-        )
-        print("Połączono z bazą!")
-        return connection
-    except cx_Oracle.Error as error:
-        print(f"Error connecting to database: {error}")
-        return None
-
-def execute_query(conn, query, param):
+def execute_query(conn, query, params):
     cursor = conn.cursor()
     cursor.execute(query, params)
     columns = [col[0] for col in cursor.description]
