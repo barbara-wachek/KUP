@@ -27,7 +27,7 @@ Na koniec wygenerowane pliki należy przesłać mailowo do odpowiedniego pracown
 - 📄 Plik `client_secrets.json` w katalogu z kodem (plik z danymi uwierzytelniającymi OAuth 2.0 dla Google Drive).
   - Można go pobrać z [Google Cloud Console](https://console.cloud.google.com/apis/credentials)
   - Musi być poprawnie skonfigurowany, aby skrypt mógł przesyłać pliki na Google Drive
-💾 Oracle Instant Client i zmienna środowiskowa **PBL_ORACLE_LIB_DIR** wskazująca folder z Instant Client
+- 💾 Oracle Instant Client i zmienna środowiskowa **PBL_ORACLE_LIB_DIR** wskazująca folder z Instant Client
   - Jest potrzebny, jeśli serwer Oracle jest starszy i wymaga połączenia w trybie thick
   - Skrypt automatycznie wywołuje oracledb.init_oracle_client(lib_dir=…) przy thick mode
   - Pobranie Instant Client: [Oracle Instant Client Downloads](https://www.oracle.com/database/technologies/instant-client.html)
