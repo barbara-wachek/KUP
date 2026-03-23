@@ -145,6 +145,7 @@ if __name__ == "__main__":
     where upper(z.za_uzytk_wpisal) like upper(:user_pbl)
       and z.za_uzytk_wpis_data between TO_DATE(:date_start, 'YYYY/MM/DD') 
                                   and TO_DATE(:date_end, 'YYYY/MM/DD')
+      and r.rz_nazwa <> 'utwór'
     order by z.za_zapis_id
     '''
     
